@@ -1,0 +1,42 @@
+<!-- <form #myForm="ngForm">
+  {{myForm.value | json}}
+  <div class="formgroup">
+    <label>Name:</label>
+    <input type="text" ngModel name="NAME" class="formcontrol">
+  </div>
+  <div class="formgroup">
+    <label>Age:</label>
+    <input type="text" ngModel name="AGE" class="formcontrol">
+  </div>
+  <div class="formgroup">
+    <label>EMAIL:</label>
+    <input type="text" ngModel name="EMAIL" class="formcontrol">
+  </div>
+  <button type="button" (click)="formsub(myForm.value)"> submit</button>
+
+
+</form> -->
+<form #myForm="ngForm">
+  {{myForm.value |json}}
+  {{data| json}}
+  <div class="formgroup">
+    <label for="gender">GENDER</label>
+    <select class="formcontrol" [ngModel]="data.gender" name="genders" >
+      <option value="" disabled selected>Select gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+  <div class="formgroup">
+    <label for="dept">DEPAERTMENT</label>
+    <input type="radio" value="cse" name="dept" [(ngModel)]="data.dept" class="formcontrol">
+    <input type="radio" value="it" name="dept" [(ngModel)]="data.dept" class="formcontrol">
+  </div>
+  <div class="formgroup">
+    <label for="year">YEAR</label>
+    <input type="checkbox" value="2022" name="year" [(ngModel)]="data.year" class="formcontrol">
+    <input type="checkbox" value="2023" name="year" [(ngModel)]="data.year" class="formcontrol">
+  </div>
+  <button type="button" (click)="subclick(myForm.value)">submit</button>
+</form>
